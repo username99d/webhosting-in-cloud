@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# CSIT Web App
+
+A comprehensive web portal designed for CSIT students in Nepal. This platform provides access to semester-wise study materials, lecture notes, YouTube video recommendations, and subject-specific resources.
+
+## Project Overview
+
+- **Framework**: [Next.js](https://nextjs.org)
+- **Styling**: Tailwind CSS / Custom CSS
+- **Deployment**: Dockerized for AWS EC2 (optimized for t3.micro)
 
 ## Getting Started
 
@@ -16,25 +24,79 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Docker & Containerization
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Build and run the application using Docker Compose:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+docker-compose up -d --build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application will be available at `http://localhost:3000`.
 
-## Learn More
+## Deployment on AWS EC2
 
-To learn more about Next.js, take a look at the following resources:
+This guide covers deployment on **Amazon Linux 2023** and **Ubuntu**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### 1. Launch an Instance
+- **OS**: Amazon Linux 2023 (recommended) or Ubuntu Server.
+- **Instance Type**: t3.micro (adequate for small apps).
+- **Security Group (Firewall)**:
+  - Allow **Custom TCP Rule** on port `3000` (Source: `0.0.0.0/0` or your specific IP).
+  - Allow **SSH** on port `22`.
+  - Optionally allow `80` (HTTP) and `443` (HTTPS) if you plan to set up a reverse proxy later.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Install Docker
+Connect to your instance via SSH: `ssh -i <your-key.pem> ec2-user@<public-ip>`
 
-## Deploy on Vercel
+#### For Amazon Linux 2023:
+```bash
+sudo yum update -y
+sudo yum install -y docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+# Log out and log back in for group changes to take effect
+exit
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### For Ubuntu:
+```bash
+sudo apt-get update
+sudo apt-get install -y docker.io docker-compose
+sudo usermod -aG docker $USER
+# Log out and log back in
+exit
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### 3. Deploy Application
+
+1.  **Clone the Repository**:
+    ```bash
+    # Install git if needed
+    sudo yum install git -y # Amazon Linux
+    # sudo apt install git -y # Ubuntu
+
+    git clone <YOUR_REPO_URL>
+    cd webhosting-in-cloud
+    ```
+
+2.  **Start the Application**:
+    *Make sure you have `docker-compose` installed. On Amazon Linux 2023, you might need to install it manually or use `docker compose` (V2) if available.*
+
+    **Using standard Docker Build (Recommended for simplicity):**
+    ```bash
+    # Build the image
+    docker build -t nextjs-app .
+
+    # Run the container
+    docker run -d -p 3000:3000 --restart always --name webapp nextjs-app
+    ```
+
+    **Using Docker Compose (if installed):**
+    ```bash
+    docker-compose up -d --build
+    ```
+
+### 4. Access the App
+Open your browser and navigate to:
+`http://<YOUR_EC2_PUBLIC_IP>:3000`
