@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Layout from '../../../../../../components/Layout';
+import AIRecommendationBox from '../../../../../../components/AIRecommendationBox';
 import curriculum from '../../../../../../data/curriculum.json';
 
 export default function Chapter({ semester, subject, chapter }) {
@@ -82,35 +83,37 @@ export default function Chapter({ semester, subject, chapter }) {
 
                 {/* Sidebar: AI Recommendations */}
                 <div className="lg:col-span-1">
-                    <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 sticky top-24 border border-indigo-100">
-                        <h2 className="text-lg font-bold text-indigo-900 mb-4 flex items-center gap-2">
-                            <span>✨</span> AI Recommended
-                        </h2>
+                    <AIRecommendationBox
+                        topic={chapter.name}
+                        context={`${subject.name} - ${semester.name}`}
+                    />
 
-                        <div className="space-y-6">
-                            {chapter.aiRecommendation?.video && (
-                                <div className="bg-white rounded-xl p-4 shadow-sm border border-indigo-100">
-                                    <span className="inline-block px-2 py-1 bg-red-100 text-red-700 text-xs font-bold rounded mb-2">Best Video</span>
-                                    <p className="text-sm font-semibold text-gray-800 mb-1">{chapter.aiRecommendation.video.title}</p>
-                                    <p className="text-xs text-gray-500 mb-2">"{chapter.aiRecommendation.video.reason}"</p>
-                                    <a href={chapter.aiRecommendation.video.url} className="text-indigo-600 text-sm font-medium hover:underline">Watch Now →</a>
-                                </div>
-                            )}
+                    {/* Keep curated recommendations if they exist as a "Featured" section below */}
+                    {(chapter.aiRecommendation?.video || chapter.aiRecommendation?.note) && (
+                        <div className="mt-8 bg-white border border-gray-100 rounded-2xl p-6">
+                            <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
+                                Curated Resources
+                            </h2>
 
-                            {chapter.aiRecommendation?.note && (
-                                <div className="bg-white rounded-xl p-4 shadow-sm border border-indigo-100">
-                                    <span className="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded mb-2">Top Note</span>
-                                    <p className="text-sm font-semibold text-gray-800 mb-1">{chapter.aiRecommendation.note.title}</p>
-                                    <p className="text-xs text-gray-500 mb-2">"{chapter.aiRecommendation.note.reason}"</p>
-                                    <a href={chapter.aiRecommendation.note.url} className="text-indigo-600 text-sm font-medium hover:underline">Read Now →</a>
-                                </div>
-                            )}
+                            <div className="space-y-6">
+                                {chapter.aiRecommendation?.video && (
+                                    <div className="bg-gray-50 rounded-xl p-4 shadow-sm border border-gray-100">
+                                        <span className="inline-block px-2 py-1 bg-red-100 text-red-700 text-xs font-bold rounded mb-2">Editor's Pick</span>
+                                        <p className="text-sm font-semibold text-gray-800 mb-1">{chapter.aiRecommendation.video.title}</p>
+                                        <a href={chapter.aiRecommendation.video.url} className="text-indigo-600 text-sm font-medium hover:underline">Watch Now →</a>
+                                    </div>
+                                )}
 
-                            {(!chapter.aiRecommendation?.video && !chapter.aiRecommendation?.note) && (
-                                <p className="text-sm text-gray-500">AI is analyzing learning patterns to generate recommendations.</p>
-                            )}
+                                {chapter.aiRecommendation?.note && (
+                                    <div className="bg-gray-50 rounded-xl p-4 shadow-sm border border-gray-100">
+                                        <span className="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-bold rounded mb-2">Top Note</span>
+                                        <p className="text-sm font-semibold text-gray-800 mb-1">{chapter.aiRecommendation.note.title}</p>
+                                        <a href={chapter.aiRecommendation.note.url} className="text-indigo-600 text-sm font-medium hover:underline">Read Now →</a>
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </Layout>
