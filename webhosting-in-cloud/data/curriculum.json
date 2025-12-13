@@ -1,0 +1,50 @@
+{
+  "semesters": [
+    {
+      "id": "1",
+      "name": "Semester 1",
+      "color": "bg-red-100 ring-red-200",
+      "subjects": [
+        {
+          "id": "intro-tech",
+          "name": "Introduction to Information Technology",
+          "chapters": [
+            {
+              "id": "ch1",
+              "name": "Chapter 1: Introduction to Computers",
+              "videos": [
+                { "title": "History of Computers", "url": "https://www.youtube.com/watch?v=placeholder1", "thumbnail": "https://placehold.co/600x400?text=History" },
+                { "title": "Generations of Computers", "url": "https://www.youtube.com/watch?v=placeholder2", "thumbnail": "https://placehold.co/600x400?text=Generations" }
+              ],
+              "notes": [
+                { "title": "Chapter 1 Notes (PDF)", "url": "#" },
+                { "title": "Basic Concepts Summary", "url": "#" }
+              ],
+              "aiRecommendation": {
+                "video": { "title": "Best Explanation: Von Neumann Arch", "url": "https://www.youtube.com/watch?v=placeholderAI", "reason": "Highly rated for clarity." },
+                "note": { "title": "Top Rated Note: Logic Gates", "url": "#", "reason": "Concise and exam-focused." }
+              }
+            },
+            {
+              "id": "ch2",
+              "name": "Chapter 2: Digital Logic",
+              "videos": [],
+              "notes": []
+            }
+          ]
+        },
+        { "id": "c-prog", "name": "C Programming", "chapters": [] },
+        { "id": "digital-logic", "name": "Digital Logic", "chapters": [] },
+        { "id": "physics", "name": "Physics", "chapters": [] },
+        { "id": "math1", "name": "Mathematics I", "chapters": [] }
+      ]
+    },
+    { "id": "2", "name": "Semester 2", "color": "bg-blue-100 ring-blue-200", "subjects": [] },
+    { "id": "3", "name": "Semester 3", "color": "bg-green-100 ring-green-200", "subjects": [] },
+    { "id": "4", "name": "Semester 4", "color": "bg-yellow-100 ring-yellow-200", "subjects": [] },
+    { "id": "5", "name": "Semester 5", "color": "bg-purple-100 ring-purple-200", "subjects": [] },
+    { "id": "6", "name": "Semester 6", "color": "bg-pink-100 ring-pink-200", "subjects": [] },
+    { "id": "7", "name": "Semester 7", "color": "bg-indigo-100 ring-indigo-200", "subjects": [] },
+    { "id": "8", "name": "Semester 8", "color": "bg-gray-100 ring-gray-200", "subjects": [] }
+  ]
+}
