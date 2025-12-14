@@ -13,16 +13,32 @@
               "id": "ch1",
               "name": "Chapter 1: Introduction to Computers",
               "videos": [
-                { "title": "History of Computers", "url": "https://www.youtube.com/watch?v=placeholder1", "thumbnail": "https://placehold.co/600x400?text=History" },
-                { "title": "Generations of Computers", "url": "https://www.youtube.com/watch?v=placeholder2", "thumbnail": "https://placehold.co/600x400?text=Generations" }
+                {
+                  "title": "History of Computers",
+                  "url": "https://www.youtube.com/results?search_query=history+of+computers",
+                  "thumbnail": "https://placehold.co/600x400?text=History"
+                },
+                {
+                  "title": "Generations of Computers",
+                  "url": "https://www.youtube.com/results?search_query=generations+of+computers",
+                  "thumbnail": "https://placehold.co/600x400?text=Generations"
+                }
               ],
               "notes": [
-                { "title": "Chapter 1 Notes (PDF)", "url": "#" },
-                { "title": "Basic Concepts Summary", "url": "#" }
+                {
+                  "title": "Chapter 1 Summary",
+                  "url": "#"
+                }
               ],
               "aiRecommendation": {
-                "video": { "title": "Best Explanation: Von Neumann Arch", "url": "https://www.youtube.com/watch?v=placeholderAI", "reason": "Highly rated for clarity." },
-                "note": { "title": "Top Rated Note: Logic Gates", "url": "#", "reason": "Concise and exam-focused." }
+                "video": {
+                  "title": "Computer History Documentary",
+                  "url": "https://www.youtube.com/results?search_query=computer+history+documentary"
+                },
+                "note": {
+                  "title": "IT Basics PDF",
+                  "url": "#"
+                }
               }
             },
             {
@@ -30,21 +46,265 @@
               "name": "Chapter 2: Digital Logic",
               "videos": [],
               "notes": []
+            },
+            {
+              "id": "ch3",
+              "name": "Chapter 3: Computer Architecture",
+              "videos": [],
+              "notes": []
             }
           ]
         },
-        { "id": "c-prog", "name": "C Programming", "chapters": [] },
-        { "id": "digital-logic", "name": "Digital Logic", "chapters": [] },
-        { "id": "physics", "name": "Physics", "chapters": [] },
-        { "id": "math1", "name": "Mathematics I", "chapters": [] }
+        {
+          "id": "c-prog",
+          "name": "C Programming",
+          "chapters": []
+        },
+        {
+          "id": "digital-logic",
+          "name": "Digital Logic",
+          "chapters": []
+        },
+        {
+          "id": "math1",
+          "name": "Mathematics I",
+          "chapters": []
+        },
+        {
+          "id": "physics",
+          "name": "Physics",
+          "chapters": []
+        }
       ]
     },
-    { "id": "2", "name": "Semester 2", "color": "bg-blue-100 ring-blue-200", "subjects": [] },
-    { "id": "3", "name": "Semester 3", "color": "bg-green-100 ring-green-200", "subjects": [] },
-    { "id": "4", "name": "Semester 4", "color": "bg-yellow-100 ring-yellow-200", "subjects": [] },
-    { "id": "5", "name": "Semester 5", "color": "bg-purple-100 ring-purple-200", "subjects": [] },
-    { "id": "6", "name": "Semester 6", "color": "bg-pink-100 ring-pink-200", "subjects": [] },
-    { "id": "7", "name": "Semester 7", "color": "bg-indigo-100 ring-indigo-200", "subjects": [] },
-    { "id": "8", "name": "Semester 8", "color": "bg-gray-100 ring-gray-200", "subjects": [] }
+    {
+      "id": "2",
+      "name": "Semester 2",
+      "color": "bg-blue-100 ring-blue-200",
+      "subjects": [
+        {
+          "id": "oop",
+          "name": "Object Oriented Programming (C++)",
+          "chapters": []
+        },
+        {
+          "id": "discrete",
+          "name": "Discrete Structures",
+          "chapters": []
+        },
+        {
+          "id": "math2",
+          "name": "Mathematics II",
+          "chapters": []
+        },
+        {
+          "id": "stats1",
+          "name": "Statistics I",
+          "chapters": []
+        },
+        {
+          "id": "micro",
+          "name": "Microprocessor",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Semester 3",
+      "color": "bg-green-100 ring-green-200",
+      "subjects": [
+        {
+          "id": "dsa",
+          "name": "Data Structures and Algorithms",
+          "chapters": []
+        },
+        {
+          "id": "numerical",
+          "name": "Numerical Methods",
+          "chapters": []
+        },
+        {
+          "id": "ca",
+          "name": "Computer Architecture",
+          "chapters": []
+        },
+        {
+          "id": "graphics",
+          "name": "Computer Graphics",
+          "chapters": []
+        },
+        {
+          "id": "stats2",
+          "name": "Statistics II",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Semester 4",
+      "color": "bg-yellow-100 ring-yellow-200",
+      "subjects": [
+        {
+          "id": "toc",
+          "name": "Theory of Computation",
+          "chapters": []
+        },
+        {
+          "id": "cn",
+          "name": "Computer Networks",
+          "chapters": []
+        },
+        {
+          "id": "os",
+          "name": "Operating Systems",
+          "chapters": []
+        },
+        {
+          "id": "dbms",
+          "name": "Database Management System",
+          "chapters": []
+        },
+        {
+          "id": "ai",
+          "name": "Artificial Intelligence",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Semester 5",
+      "color": "bg-purple-100 ring-purple-200",
+      "subjects": [
+        {
+          "id": "daa",
+          "name": "Design and Analysis of Algorithms",
+          "chapters": []
+        },
+        {
+          "id": "sad",
+          "name": "System Analysis and Design",
+          "chapters": []
+        },
+        {
+          "id": "crypto",
+          "name": "Cryptography",
+          "chapters": []
+        },
+        {
+          "id": "sim",
+          "name": "Simulation and Modeling",
+          "chapters": []
+        },
+        {
+          "id": "web-tech",
+          "name": "Web Technology",
+          "chapters": []
+        },
+        {
+          "id": "elective1",
+          "name": "Elective I",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Semester 6",
+      "color": "bg-pink-100 ring-pink-200",
+      "subjects": [
+        {
+          "id": "se",
+          "name": "Software Engineering",
+          "chapters": []
+        },
+        {
+          "id": "compiler",
+          "name": "Compiler Design",
+          "chapters": []
+        },
+        {
+          "id": "e-gov",
+          "name": "E-Governance",
+          "chapters": []
+        },
+        {
+          "id": "net-centric",
+          "name": "Net Centric Computing",
+          "chapters": []
+        },
+        {
+          "id": "tech-writing",
+          "name": "Technical Writing",
+          "chapters": []
+        },
+        {
+          "id": "elective2",
+          "name": "Elective II",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Semester 7",
+      "color": "bg-indigo-100 ring-indigo-200",
+      "subjects": [
+        {
+          "id": "adv-java",
+          "name": "Advanced Java Programming",
+          "chapters": []
+        },
+        {
+          "id": "dw-dm",
+          "name": "Data Warehousing and Data Mining",
+          "chapters": []
+        },
+        {
+          "id": "po-mgt",
+          "name": "Principles of Management",
+          "chapters": []
+        },
+        {
+          "id": "project-work",
+          "name": "Project Work",
+          "chapters": []
+        },
+        {
+          "id": "elective3",
+          "name": "Elective III",
+          "chapters": []
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Semester 8",
+      "color": "bg-gray-100 ring-gray-200",
+      "subjects": [
+        {
+          "id": "adv-db",
+          "name": "Advanced Database",
+          "chapters": []
+        },
+        {
+          "id": "internship",
+          "name": "Internship",
+          "chapters": []
+        },
+        {
+          "id": "elective4",
+          "name": "Elective IV",
+          "chapters": []
+        },
+        {
+          "id": "elective5",
+          "name": "Elective V",
+          "chapters": []
+        }
+      ]
+    }
   ]
 }
